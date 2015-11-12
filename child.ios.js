@@ -1,7 +1,7 @@
 'use strict';
 
 var React = require('react-native');
-// var Child = require('./child.ios');
+var LowestChild = require('./child2.ios');
 
 var {
   StyleSheet,
@@ -10,23 +10,22 @@ var {
   Text
 } = React;
 
-var RootNav = React.createClass({
+var ChildNav = React.createClass({
   goNav: function(){
-    // This function allows for changing screens
     this.props.navigator.push({
-      title:'The Child of Man',
-      component: Child,
-      passProps: {myElement: 'this could be your value'}
+      title:'Even lower',
+      component: LowestChild,
     });
   },
   render: function() {
     return (
       <View style={styles.container}>
+      <Text style={styles.text}>My value: {this.props.myElement}</Text>
         <TouchableHighlight
           style={styles.button}
           onPress={() => this.goNav()}
           underlayColor='#bbbbbb'>
-          <Text style={styles.btnText}>Dive Dive</Text>
+          <Text style={styles.btnText}>Dive Dive Dive</Text>
         </TouchableHighlight>
       </View>
     );
@@ -38,8 +37,13 @@ var styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#5151f4',
+    backgroundColor: '#1aaf2d',
     padding: 10
+  },
+  text:{
+    flex: 2,
+    fontSize: 18,
+    color: '#fff'
   },
   button: {
     height: 36,
@@ -56,4 +60,4 @@ var styles = StyleSheet.create({
   },
 });
 
-module.exports = RootNav;
+module.exports = ChildNav;
