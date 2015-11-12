@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react-native');
+var Child = require('./child.ios');
 
 var {
   StyleSheet,
@@ -11,7 +12,12 @@ var {
 
 var RootNav = React.createClass({
   goNav: function(){
-
+    // This function allows for changing screens
+    this.props.navigator.push({
+      title:'The Child of Man',
+      component: Child,
+      passProps: {myElement: 'this could be your value'}
+    });
   },
   render: function() {
     return (
