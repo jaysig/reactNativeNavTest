@@ -12,20 +12,20 @@ var {
 var RootNav = React.createClass({
   goNav: function(){
 
-  }
+  },
   render: function() {
     return (
-      <View style="{styles.container}">
-      <TouchableHighlight
-      style={styles.button}
-      onPress={() => this.goNav()}
-      underlayColor='#bbbbbb'>
-      <Text style={styles.btnText}> Quickly Navigate Sir </Text>
-      </TouchableHighlight>
+      <View style={styles.container}>
+        <TouchableHighlight
+          style={styles.button}
+          onPress={() => this.goNav()}
+          underlayColor='#bbbbbb'>
+          <Text style={styles.btnText}>Dive Dive</Text>
+        </TouchableHighlight>
       </View>
     );
   }
-});
+})
 
 var styles = StyleSheet.create({
   container: {
@@ -35,7 +35,7 @@ var styles = StyleSheet.create({
     backgroundColor: '#5151f4',
     padding: 10
   },
-  button{
+  button: {
     height: 36,
     flex:1,
     flexDirection: 'row',
@@ -50,4 +50,4 @@ var styles = StyleSheet.create({
   },
 });
 
-model.exports = RootNav;
+module.exports = RootNav;
